@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+namespace KatalogProduktow4L.Core;
 
-namespace KatalogProduktow4L.Core
+/// <summary>
+/// Klasa podzespol ma dziedziczyc z klasy Produkt i reprezentuje jakąś fizyczną część na magazynie.
+/// </summary>
+public class Podzespol : Produkt
 {
-    /// <summary>
-    /// Klasa podzespol ma dziedziczyc z klasy Produkt i reprezentuje jaks fizyczna czesc na magazynie
-    /// </summary>
-    public class Podzespol : Produkt //Podzespol dziedziczy po klasie Produkt
-    {
-        public string Producent { get; set; } //oprocz pól z klasy Produkt, Podzespol ma dodatkowe pole Producent
+    public string Producent { get; set; } = string.Empty;
 
-        //ponownie nadpisujemy funkcje tostring aby wypisywala wszystkie pola z klasy Produkt oraz pole Producent
-        //w ten sposób klasa dziedzicząca ma inną implementację dla tej samej funkcji niż klasa bazowa
-        public override string ToString()
-        {
-            return $"Nazwa: {Nazwa}, Cena: {Cena}, Kategoria: {Kategoria}, Ilość: {Ilosc}, Wartość magazynu: {WartoscMagazynu}, Producent: {Producent}";
-        }
-        public string Opis()
-        {
-            return "Tu jest opis podzespolu dla podzespolu";
-        }
+    public override string ToString()
+    {
+        return $"Nazwa: {Nazwa}, Cena: {Cena}, Kategoria: {Kategoria}, Ilość: {Ilosc}, Wartość magazynu: {WartoscMagazynu}, Producent: {Producent}";
+    }
+
+    public new string Opis()
+    {
+        return "Tu jest opis podzespolu dla podzespolu";
     }
 }
